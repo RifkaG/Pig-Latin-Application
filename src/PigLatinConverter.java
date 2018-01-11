@@ -1,5 +1,4 @@
 
-
 public class PigLatinConverter 
 {
 
@@ -17,6 +16,7 @@ public class PigLatinConverter
 	
 	public String[] getWord()
 	{
+		
 		return words;
 	}
 	
@@ -31,8 +31,11 @@ public class PigLatinConverter
                {
             	   latinString += (word + "way ");
                }
-               else 
+               else if (word.toLowerCase().startsWith("q"))
                {
+            	   latinString += (word.substring(2) +"quay ");
+               }
+               else {
             	   char[] letters = word.toCharArray();
             	   int position = 0;
             	   for(int i = 0; i<letters.length; i++)
